@@ -1,0 +1,7 @@
+TITLE = 'enmon'
+VERSION = '1.0.0'
+DESCRIPTION = 'Environmental Monitoring Toolkit for HARDWARIO Bridge Module'
+AUTHOR = 'Pavel Hübner'
+EMAIL = 'pavel.hubner@hardwario.com'
+URL = 'https://github.com/hardwario/enmon'
+LICENSE = 'MIT'
