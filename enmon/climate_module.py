@@ -22,12 +22,12 @@ class ClimateModule:
     def measure(self):
 
         try:
-            temperature1 = self._temperature_tag.measure()
+            temperature = self._temperature_tag.measure()
         except TemperatureTagException:
             raise ClimateModuleException
 
         try:
-            humidity, temperature2 = self._humidity_tag.measure()
+            humidity = self._humidity_tag.measure()[0]
         except HumidityTagException:
             raise ClimateModuleException
 
@@ -42,8 +42,7 @@ class ClimateModule:
             raise ClimateModuleException
 
         return {
-            'temperature1': temperature1,
-            'temperature2': temperature2,
+            'temperature': temperature,
             'humidity': humidity,
             'pressure': pressure,
             'altitude': altitude,

@@ -15,21 +15,66 @@ This project is a Python CLI tool providing access to HARDWARIO Bridge Module - 
 
 ## Installation on Raspberry Pi
 
-> Only official Raspbian distribution is supported. The following procedure has been tested with Raspbian Buster Lite.
+> Only the official Raspbian distribution is supported. The following procedure has been tested with Raspbian Buster Lite.
 
-    sudo apt install libudev-dev libusb-1.0-0-dev
+1. Install the build tools:
 
-    sudo apt install autotools-dev autoconf automake libtool
+    sudo apt install -y autotools-dev autoconf automake libtool
 
-    wget https://github.com/libusb/hidapi/archive/hidapi-0.9.0.tar.gz
+1. Install the library dependencies:
 
-    cd hidapi-hidapi-0.9.0
+    sudo apt install -y libudev-dev libusb-1.0-0-dev
 
-    ./bootstrap
+1. Downloaded the sources:
 
-    ./configure
+    $ wget https://github.com/libusb/hidapi/archive/hidapi-0.9.0.tar.gz
 
-    sudo make install
+1. Extract the downloaded sources:
+
+    $ tar xzf hidapi-0.9.0.tar.gz
+
+1. Go to the sources directory:
+
+    $ cd hidapi-hidapi-0.9.0
+
+1. Build the library:
+
+    $ ./bootstrap
+    $ ./configure
+    $ make
+
+1. Install the library:
+
+    $ sudo make install
+
+Alternatively, install the `hidapi` library as a package:
+
+    $ sudo apt install -y libhidapi-libusb0
+
+Install the Python tool from PyPI:
+
+    $ sudo pip3 install enmon
+
+
+## Installation on macOS
+
+1. Downloaded the sources:
+
+    $ git clone https://github.com/libusb/hidapi.git
+
+1. Go to the sources directory:
+
+    $ cd hidapi
+
+1. Build the library:
+
+    $ ./bootstrap
+    $ ./configure
+    $ make
+
+1. Install the library:
+
+    $ sudo make install
 
 
 ## Contributing
